@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>hola mundo </p>
         <p>comision 19740</p>
-        <p>3 cambio que o figure en main</p>
+       
         <a
           className="App-link"
           href="https://reactjs.org"
