@@ -1,0 +1,14 @@
+.CardWidget {
+	display: flex;
+	flex-direction: column;
+	min-height: 20vh;
+	background-color: darkcyan;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+}
+
+.CardWidget h1 {
+	color: black;
+}
