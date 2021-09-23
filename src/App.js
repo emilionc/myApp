@@ -6,7 +6,7 @@ function App() {
     <div className="App">
     <NavBar></NavBar>
     <CardWidget icono='asdasdsadsad' />
-    <ItemListContainer saludo='Greetings!' />
+    <ItemListContainer saludo='Greetingssss!' />
     </div>
   );
 }
