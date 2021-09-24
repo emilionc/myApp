@@ -3,3 +3,7 @@
 	justify-content: center;
 	margin: 20px;
 }
+.nav-items {
+display: flex;
+justify-content: flex-start;
+}
