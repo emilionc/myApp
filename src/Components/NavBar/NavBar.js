@@ -1,11 +1,20 @@
-import React from 'react'
-import CardWidget from '../CardWidget/CardWidget'
-const NavBar = () => {
-    return (
-        <div>
-           <CardWidget icono='asdasdsadsad' /> 
-        </div>
-    )
-}
+import React from "react";
+import { Icon } from "semantic-ui-react";
+import "./NavBar.css";
 
-export default NavBar
+const NavBar = () => {
+  return (
+    <div className="CardWidget">
+    <h1 className="logo-container">
+      <Icon disabled name="cart" />
+      <ul className="nav-list">
+        <li className="items">productos</li>
+        <li className="items">contacto</li>
+        <li className="items">about</li>
+        </ul>
+    </h1>
+  </div>
+  );
+};
+
+export default NavBar;
