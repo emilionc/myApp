@@ -1,19 +1,25 @@
 import React from "react";
-import { Icon } from "semantic-ui-react";
+import CardWidget from "../CardWidget/CardWidget";
 import "./NavBar.css";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 const NavBar = () => {
   return (
-    <div className="">
-    <h1 className="logo-container">
-      <Icon disabled name="cart" />
-      <ul className="nav-list">
-        <li className="items">productos</li>
-        <li className="items">contacto</li>
-        <li className="items">about</li>
-        </ul>
-    </h1>
-  </div>
+    <div>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            {" "}
+            <CardWidget />
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
   );
 };
 
