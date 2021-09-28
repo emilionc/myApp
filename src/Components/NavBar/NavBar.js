@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <div className="CardWidget">
+    <div className="">
     <h1 className="logo-container">
       <Icon disabled name="cart" />
       <ul className="nav-list">
