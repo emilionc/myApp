@@ -1,4 +1,4 @@
-.Nav-container {
-    display: inline;
-    
+Navbar {
+display: flex;
+justify-content: flex-start;
 }
