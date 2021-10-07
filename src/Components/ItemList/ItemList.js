@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Item } from 'semantic-ui-react';
+import React,  { useEffect, useState } from 'react';
+import  CardItem from '../../../src/Components/CardItem/CardItem';
+
+
 
 
  const ItemList = () => {
@@ -17,12 +19,14 @@ useEffect (()=>{
         <div>
             {users.map((user)=>{
                 return(
-                    <div key={users.id}>
-                        <Item data={user} />
-                    </div>
-                )
+                    
+                        <CardItem key={user.login}  />
+                    
+                );
             })}
         </div>
-    )
-}
+    );
+};
 export default ItemList;
+
+

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 
-const Item = ({data}) => (
+const CardItem = ({user}) => (
   <Card>
-    <Image src={data.avatar_url} wrapped ui={false} />
     <Card.Content>
-      <Card.Header>{data.login}</Card.Header>
+      <Card.Header>{user.login}</Card.Header>
       <Card.Meta>
         <span className='date'>Joined in 2015</span>
       </Card.Meta>
@@ -14,12 +13,9 @@ const Item = ({data}) => (
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
+     
     </Card.Content>
   </Card>
 )
 
-export default Item
+export default CardItem;
