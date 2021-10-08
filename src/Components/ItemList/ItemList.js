@@ -20,7 +20,7 @@ useEffect (()=>{
             {users.map((user)=>{
                 return(
                     
-                        <CardItem key={user.login}  />
+                        <CardItem key={user.login} user={user} />
                     
                 );
             })}
