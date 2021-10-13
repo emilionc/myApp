@@ -1,8 +1,7 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
-const CardWidget = (props) => {
 
-    
+const CardWidget = (props) => {
   return (
     <div>
       <div>

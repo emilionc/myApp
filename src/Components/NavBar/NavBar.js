@@ -13,7 +13,7 @@ const NavBar = () => {
 </Navbar.Brand>
     <Nav className="me-auto">
     <InputGroup size="sm" className="mb-3">
-    <InputGroup.Text id="inputGroup-sizing-sm"><ItemCount stock="10" initial="1" /></InputGroup.Text>
+    <InputGroup.Text id="inputGroup-sizing-sm"><ItemCount stock="30"  /></InputGroup.Text>
     <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
   </InputGroup>
     </Nav>

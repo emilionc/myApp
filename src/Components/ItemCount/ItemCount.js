@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 
-const ItemCount = ({stock, Initial}) => {
+const ItemCount = ({stock}) => {
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {

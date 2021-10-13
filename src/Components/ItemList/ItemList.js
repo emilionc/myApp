@@ -15,13 +15,15 @@ useEffect (()=>{
     .then(data => setUsers(data))
 }, []);
 
+
     return (
         <div>
             {users.map((user)=>{
                 return(
-                    
+                        <div key={user.id}>
                         <CardItem key={user.login} user={user} />
-                    
+                        
+                        </div>
                 );
             })}
         </div>
