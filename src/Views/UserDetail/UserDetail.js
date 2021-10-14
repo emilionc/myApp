@@ -17,7 +17,7 @@ const UserDetail = ({ match }) => {
 			<h1>User  Detail</h1>
 			{console.log(user)}
 			<h2>Nombre: {user.login}</h2>
-			<h2>Biografia: {user.url}</h2>
+			<h2>id: {user.node_id}</h2>
 			<h2>Avatar: {user.avatar_url}</h2>
 
 		</div>

@@ -10,7 +10,7 @@ const CardItem = ({ user }) => (
       <Card.Meta>
          <Button>Detail</Button>
          
-        <span className="date">{user.name}</span>
+        <span className="date">{user.repos_url}</span>
        
       </Card.Meta>
       <Card.Description> {user.url}</Card.Description>
