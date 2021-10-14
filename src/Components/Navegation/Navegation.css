@@ -1,0 +1,17 @@
+.Navegation {
+	display: flex;
+	min-height: 5vh;
+}
+
+ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.Link {
+	color:black;
+	list-style-type: none;
+	font-size: 20px;
+}
