@@ -1,4 +1,3 @@
-import ItemListContainer from "./Components/ItemList/ItemList";
 import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //components
@@ -15,7 +14,6 @@ function App() {
       <div className="App">
         <NavBar numeroDeItems="" />
         <Navegation />
-        <ItemListContainer greeting="Greetings!!" />
         <Switch>
 					<Route path='/' exact component={Home} />
 					<Route path='/about' component={About} />
