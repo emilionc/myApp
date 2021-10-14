@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import './UserDetail.css';
 const UserDetail = ({ match }) => {
 
     let itemID = match.params.id;
