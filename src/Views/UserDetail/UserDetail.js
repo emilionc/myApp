@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import { Card } from 'semantic-ui-react';
 const UserDetail = ({ match }) => {
 
     let itemID = match.params.id;
@@ -15,16 +14,11 @@ const UserDetail = ({ match }) => {
         <div>
             <div className='CharacterDetail' style={{ padding: 40 }}>
 			<h1>User  Detail</h1>
-			{user.map((user) => {
-				return (
-					<Card key={user.id}>
-						<Card.Content>
-							<Card.Header>{user.log}</Card.Header>
-							
-						</Card.Content>
-					</Card>
-				);
-			})}
+			{console.log(user)}
+			<h2>Nombre: {user.login}</h2>
+			<h2>Biografia: {user.url}</h2>
+			<h2>Avatar: {user.avatar_url}</h2>
+
 		</div>
         </div>
     )
