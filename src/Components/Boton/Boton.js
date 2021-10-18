@@ -1,43 +1,50 @@
 import React from 'react';
-import { Button,  Form } from 'semantic-ui-react';
 import { useFormik } from 'formik';
 
 const Boton = () => {
-  const Formik = useFormik({
-    initialValues={
-      nombre='',
-      email=''
-    }, 
-    onSubmit:(data)=>{
-      console.log(data)
-    }
-    
-  })
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      email: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
-    <div>
-      <Form  onSubmit={Formik.handleSubmit}
+    <form
     style={{
         textAlign: "center",
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
         justifyContent: "center",
-        height: "50rem",
+        height: "50rem"
       }}
-    >
-      <Form.Field>
-        <label>First Name</label>
-        <input placeholder='First Name' name='nombre'  />
-      </Form.Field>
-      <Form.Field>
-        <label>email</label>
-        <input placeholder='email' name='email' />
-      </Form.Field>
-      
-      <Button type='submit'>Submit</Button>
-    </Form>
-    </div>
-  )
+     onSubmit={formik.handleSubmit}>
+      <label htmlFor="firstName">First Name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        required
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
+      />
+
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
 };
 
 export default Boton
