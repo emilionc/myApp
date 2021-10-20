@@ -27,16 +27,14 @@ setTerminar(!terminar)
 			<h2>Nombre: {user.login}</h2>
 			<h2>id: {user.node_id}</h2>
 			<h2>Avatar: {user.avatar_url}</h2>
-            {
-           terminar ? (
-              <button>Finalizar Compra</button>
-           ) : (
-               <ItemCount valorInicial="1"  stock="30" initial={0}  onClick={ (cant) => onAdd(cant)} />
+            
+          
+               <ItemCount valorInicial="1"  stock="30"   onClick={ (cant) => onAdd(cant)} />
 
-           )
+           
 
 
-            }
+            
 		</div>
         </div>
     )

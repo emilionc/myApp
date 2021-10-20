@@ -4,6 +4,10 @@ import Button from "react-bootstrap/Button";
 
 const ItemCount = ({stock, props}) => {
   const [counter, setCounter] = useState(0);
+  const [compra, setCompra] = useState([]);
+
+  const [terminar, setTerminar] = useState(false);
+
 
   const handleIncrement = () => {
     if (counter< stock) {
@@ -16,6 +20,12 @@ const ItemCount = ({stock, props}) => {
     }
   };
 
+
+  const onAdd = (cantidad) => {
+     // Funcion que va a hacer desaparecer el item count por un boton de 'Finalizar   compra"
+     setCompra(cantidad)
+setTerminar(!terminar)
+  }
   return (
     <div className="container">
       <h2>{counter}</h2>
@@ -26,9 +36,13 @@ const ItemCount = ({stock, props}) => {
       <Button variant="primary" onClick={handleIncrement}>
         +
       </Button>
-      <Button onClick={()=>props.onClick(counter)}>
+      { terminar ? (
+              <button>Finalizar Compra</button>
+           ) : (
+        <Button onClick={(cant)=> onAdd(cant)}>
         Agregar
       </Button>
+           )}
     </div>
   );
 };
