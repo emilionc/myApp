@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, props}) => {
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {
@@ -25,6 +25,9 @@ const ItemCount = ({stock}) => {
 
       <Button variant="primary" onClick={handleIncrement}>
         +
+      </Button>
+      <Button onClick={()=>props.onClick(counter)}>
+        Agregar
       </Button>
     </div>
   );
