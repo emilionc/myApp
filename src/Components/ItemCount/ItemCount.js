@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-
+import { Link } from "react-router-dom";
 
 const ItemCount = ({stock, props}) => {
   const [counter, setCounter] = useState(0);
@@ -36,9 +36,7 @@ setTerminar(!terminar)
       <Button variant="primary" onClick={handleIncrement}>
         +
       </Button>
-      { terminar ? (
-              <button>Finalizar Compra</button>
-           ) : (
+      { terminar ?<Link to="/Carrito"><button className="btn_activo" >Confirmar Compra</button></Link>: (
         <Button onClick={(cant)=> onAdd(cant)}>
         Agregar
       </Button>
