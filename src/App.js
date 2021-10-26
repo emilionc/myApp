@@ -9,13 +9,15 @@ import About from "./Views/About/About";
 import UserDetail from "./Views/UserDetail/UserDetail";
 import Contact from "./Views/Contact/Contact";
 import Carrito from "./Components/Carrito/Carrito";
-
+//CONTEXT
+import { ItemsProvider } from "./ItemContext";
 
 function App() {
   return (
+    <ItemsProvider>
     <Router>
       <div className="App">
-        <NavBar numeroDeItems="" />
+        <NavBar />
         <Navegation />
         
         <Switch>
@@ -28,6 +30,7 @@ function App() {
 				</Switch>
       </div>
     </Router>
+    </ItemsProvider>
   );
 }
 

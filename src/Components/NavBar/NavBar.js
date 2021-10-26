@@ -1,7 +1,8 @@
 import React from "react";
-import CardWidget from "../CardWidget/CardWidget";
 import "./NavBar.css";
 import { Navbar, Nav, Container, InputGroup, FormControl } from "react-bootstrap";
+//componentes importados
+import CardWidget from "../CardWidget/CardWidget";
 import ItemCount from "../ItemCount/ItemCount";
 
 const NavBar = () => {

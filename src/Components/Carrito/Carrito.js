@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { ItemsContext } from "../../ItemContext";
 
 const Carrito = () => {
-    return (
-        <div>
-            <h1>carroooo</h1>
-        </div>
-    )
-}
+    
+  const [items, setItems, clearState, cart, setCart] = useContext(ItemsContext);
+  console.log(items, setItems);
 
-export default Carrito
+  return (
+    <div>
+      <h1>carroooo hay: {items.length} productos</h1>
+    </div>
+  );
+};
+
+export default Carrito;

@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios';
 import './UserDetail.css';
 import ItemCount from '../../Components/ItemCount/ItemCount';
+
+import { ItemsContext } from '../../ItemContext';
 
 const UserDetail = ({ match }) => {
 
     let itemID = match.params.id;
     const [user, setUser] = useState([]);
     const [compra, setCompra] = useState([]);
-    const [terminar, setTerminar] = useState(false);
     
     useEffect(()=>{
     axios(`https://api.github.com/users/${itemID}`).then((res) =>
@@ -17,8 +18,9 @@ const UserDetail = ({ match }) => {
 },[itemID]);
 const onAdd = (cantidad)=>{
 setCompra(cantidad)
-setTerminar(!terminar)
 }
+const [items, setItems] = useContext(ItemsContext);
+    console.log(items)
     return (
         <div>
             <div className='CharacterDetail' style={{ padding: 40 }}>
