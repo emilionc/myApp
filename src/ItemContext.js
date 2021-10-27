@@ -25,8 +25,7 @@ import React, { createContext, useState } from "react";
         }
       
         return(
-            <ItemsContext.Provider value={[items, setItems, cart, setCart,addItem]}>
-            {                 }
+            <ItemsContext.Provider value={[items, setItems, cart, setCart,addItem]}>       
                 {children}
             </ItemsContext.Provider>
         )
