@@ -3,8 +3,7 @@ import { ItemsContext } from "../../ItemContext";
 
 const Carrito = () => {
     
-  const [items, setItems, clearState, cart, setCart] = useContext(ItemsContext);
-  console.log(items, setItems);
+  const [items, setItems] = useContext(ItemsContext);
 
   return (
     <div>

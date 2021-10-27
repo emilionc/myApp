@@ -20,7 +20,7 @@ useEffect(() => {
             {users.map((user)=>{
                 return(
                         <Link to={`/detail/${user.id}`} >
-                        <CardItem key={user.login} user={user} />
+                        <CardItem key={user.id} user={user} />
                         </Link>
                         
                 );
