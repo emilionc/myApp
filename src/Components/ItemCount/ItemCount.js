@@ -3,12 +3,11 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { ItemsContext } from "../../ItemContext";
 
-const ItemCount = ({ stock, onClick, nombre, compra, setCompra }) => {
+const ItemCount = ({ stock, onClick, nombre }) => {
   //useContext
   const [items, setItems] = useContext(ItemsContext);
   console.log("ITEMS", items);
   const [counter, setCounter] = useState(0);
-
   //estado del conditional rendering..
   const [terminar, setTerminar] = useState(false);
 
@@ -30,7 +29,6 @@ const ItemCount = ({ stock, onClick, nombre, compra, setCompra }) => {
 
   const onAdd = () => {
     // Funcion que va a hacer desaparecer el item count por un boton de 'Finalizar   compra"
-    setCompra(counter);
     setTerminar(!terminar);
   };
   const onConfirmar = () => {
@@ -62,7 +60,7 @@ const ItemCount = ({ stock, onClick, nombre, compra, setCompra }) => {
           </button>
         </Link>
       ) : (
-        <Button stock={compra.length} onClick={onAdd}>
+        <Button  onClick={onAdd}>
           Agregar
         </Button>
       )}

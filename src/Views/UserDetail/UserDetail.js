@@ -31,7 +31,7 @@ const [items, setItems] = useContext(ItemsContext);
 			<h2>Avatar: {user.avatar_url}</h2>
             
           
-               <ItemCount nombre={user.id} valorInicial="1"  stock="30"   onClick={ (cant) => onAdd(cant)} />
+               <ItemCount nombre={user.login} valorInicial="1"  stock="30"   onClick={ (cant) => onAdd(cant)} />
 
            
 
