@@ -3,11 +3,11 @@ import { ItemsContext } from "../../ItemContext";
 
 const Carrito = () => {
     
-  const [items, setItems] = useContext(ItemsContext);
+  const {cantidadTotal} = useContext(ItemsContext);
 
   return (
     <div>
-      <h1>carroooo hay: {items.length} productos</h1>
+      <h1>carroooo hay: {cantidadTotal} productos</h1>
     </div>
   );
 };

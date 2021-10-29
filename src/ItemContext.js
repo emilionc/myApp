@@ -1,18 +1,31 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
+export const ItemsContext = createContext();
 
-
-    export   const ItemsContext = createContext()  
-
-    export const ItemsProvider = ({children}) => {
-        
-        
-        const [items, setItems] = useState([]);
-       
-       
-        return(
-            <ItemsContext.Provider value={[items, setItems]}>       
-                {children}
-            </ItemsContext.Provider>
-        )
+export const ItemsProvider = ({ children }) => {
+ 
+  const [items, setItems] = useState([]);
+  
+  
+  const [cantidadTotal, setCantidadTotal] = useState([]);
+  //estado del conditional rendering..
+  useEffect(() => {
+    const cantidadTotal = items.reduce((acc, item) => (acc = item.cantidad), 0);
+    console.log(items)
+    setCantidadTotal(cantidadTotal)            
+  }, [items]);
+  const addItem = (item, cantidad) => {
+    const newItem = {
+      ...item, 
+      cantidad: cantidad,
     };
+    const newCart = [...items, newItem];
+    setItems(newCart);
+  };
+
+  return (
+    <ItemsContext.Provider value={{ items, addItem, cantidadTotal }}>
+      {children}
+    </ItemsContext.Provider>
+  );
+};
