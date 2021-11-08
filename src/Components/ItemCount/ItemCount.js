@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { ItemsContext } from "../../ItemContext";
 
 const ItemCount = ({ stock, onClick }) => {
   //useContext
+  
   const [counter, setCounter] = useState(0);
   const [terminar, setTerminar] = useState(false);
 

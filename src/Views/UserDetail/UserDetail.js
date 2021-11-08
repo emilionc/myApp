@@ -8,7 +8,7 @@ import { ItemsContext } from "../../ItemContext";
 const UserDetail = ({ match }) => {
   let itemID = match.params.id;
   const [user, setUser] = useState([]);
-  const { items, setItems, addItem } = useContext(ItemsContext);
+  const {  addItem } = useContext(ItemsContext);
 
   useEffect(() => {
     axios(`https://api.github.com/users/${itemID}`).then((res) =>
