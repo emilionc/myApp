@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-
+import  '../ItemCount/ItemCount.css'
 const ItemCount = ({ stock, onClick }) => {
   //useContext
   
@@ -44,9 +44,11 @@ const ItemCount = ({ stock, onClick }) => {
           </button>
         </Link>
       ) : (
+        <div className="button-container">
         <Button  onClick={onAdd}>
           Agregar
         </Button>
+        </div>
       )}
     </div>
   );

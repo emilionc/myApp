@@ -1,35 +1,44 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
 import "./UserDetail.css";
 import ItemCount from "../../Components/ItemCount/ItemCount";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../FireBase/FireBase";
 
 import { ItemsContext } from "../../ItemContext";
 
 const UserDetail = ({ match }) => {
   let itemID = match.params.id;
-  const [user, setUser] = useState([]);
-  const {  addItem } = useContext(ItemsContext);
+  const [product, setProduct] = useState([]);
+  const { addItem } = useContext(ItemsContext);
 
   useEffect(() => {
-    axios(`https://api.github.com/users/${itemID}`).then((res) =>
-      setUser(res.data)
-    );
+    const requestData = async () => {
+      const docRef = doc(db, "products", itemID);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setProduct(docSnap.data())
+      }
+    };
+    requestData();
+
   }, [itemID]);
   const onAdd = (cantidad) => {
-      addItem(user, cantidad)
+    addItem(product, cantidad);
   };
 
   return (
     <div>
       <div className="CharacterDetail" style={{ padding: 40 }}>
-        <h1>User Detail</h1>
-        {console.log(user)}
-        <h2>Nombre: {user.login}</h2>
-        <h2>id: {user.node_id}</h2>
-        <h2>Avatar: {user.avatar_url}</h2>
-
+        <h1> Detail</h1>
+        {console.log(product)}
+        <img src={product.img} alt="algodon"/>
+        <h2>Nombre: {product.title}</h2>
+        <h2>Price: ${product.price}</h2>
+        <h3>Talle: {product.talle}</h3>
         <ItemCount
-          nombre={user.login}
+          nombre={product.title}
           valorInicial="1"
           stock="30"
           onClick={(cant) => onAdd(cant)}

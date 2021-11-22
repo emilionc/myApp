@@ -1,10 +1,8 @@
 import React from "react";
 import "./NavBar.css";
-import { Navbar, Nav, Container, InputGroup, FormControl } from "react-bootstrap";
+import { Navbar,  Container } from "react-bootstrap";
 //componentes importados
 import CardWidget from "../CardWidget/CardWidget";
-import ItemCount from "../ItemCount/ItemCount";
-
 const NavBar = () => {
   return (
     <div>
@@ -12,12 +10,7 @@ const NavBar = () => {
     <Container>
     <Navbar.Brand href="#home">    <CardWidget />  
 </Navbar.Brand>
-    <Nav className="me-auto">
-    <InputGroup size="sm" className="mb-3">
-    <InputGroup.Text id="inputGroup-sizing-sm"><ItemCount stock="30"  /></InputGroup.Text>
-    <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-  </InputGroup>
-    </Nav>
+
     </Container>
     </Navbar>
   </div>

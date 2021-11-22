@@ -1,8 +1,11 @@
-.ItemList {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	margin: auto;
-	gap: 20px;
-	width: 80%;
-	padding: 20px;
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  
 }

@@ -1,22 +1,22 @@
 import React from "react";
-import { Card, Button } from "semantic-ui-react";
+import { Card,  Image } from 'semantic-ui-react'
 import "./CardItem.css";
- 
 
-const CardItem = ({ user }) => (
-  <Card className="card">
+const CardItem = ({product}) => (
+  
+  <Card>
+    <Image src={product.img} wrapped ui={false} />
     <Card.Content>
-      <Card.Header>{user.login}</Card.Header>
+      <Card.Header>{product.title}</Card.Header>
       <Card.Meta>
-         <Button>Detail</Button>
-         
-        <span className="date">{user.repos_url}</span>
-       
+        <span className='date'>Stock: {product.stock}</span>
       </Card.Meta>
-      <Card.Description> {user.url}</Card.Description>
+      <Card.Description>Price:
+       ${ product.price}
+      </Card.Description>
     </Card.Content>
-    <Card.Content extra></Card.Content>
+    
   </Card>
-);
+)
 
-export default CardItem;
+export default CardItem

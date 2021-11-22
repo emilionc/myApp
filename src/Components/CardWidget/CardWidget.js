@@ -1,7 +1,12 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
+  
+
+
 
 const CardWidget = () => {
+
+  
   return (
     <div>
       <div>

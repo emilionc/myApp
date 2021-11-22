@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-
+import "./Boton.css"
 const Boton = () => {
   const formik = useFormik({
     initialValues: {
@@ -32,15 +32,7 @@ const Boton = () => {
         value={formik.values.firstName}
       />
 
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        required
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
+      
 
       <button type="submit">Submit</button>
     </form>

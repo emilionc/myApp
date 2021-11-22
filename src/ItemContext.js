@@ -23,13 +23,19 @@ export const ItemsProvider = ({ children }) => {
    const limpiarCarrito = () => {
      setItems([])
    };
+   const removeItem = (itemId) => {
+
+    setItems(items.filter(item => item.id !== itemId));
+    console.log(itemId)
+
+}
   /* function findUser(()=>{
 
     return user.login === 1;}, ) ;
   console.log(items.some(isUser));
 */
   return (
-    <ItemsContext.Provider value={{ items, addItem, cantidadTotal, limpiarCarrito}}>
+    <ItemsContext.Provider value={{ items, addItem, cantidadTotal, limpiarCarrito, removeItem}}>
       {children}
     </ItemsContext.Provider>
   );
