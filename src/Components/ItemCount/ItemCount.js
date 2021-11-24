@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import  '../ItemCount/ItemCount.css'
 const ItemCount = ({ stock, onClick }) => {
@@ -28,15 +27,14 @@ const ItemCount = ({ stock, onClick }) => {
 
   return (
     <div className="container">
-      <h2>{counter}</h2>
-      <Button variant="primary" onClick={handleDecrement}>
-        -
-      </Button>
-
-      <Button variant="primary" onClick={handleIncrement}>
-        +
-      </Button>
-      
+     
+      <button onClick={handleDecrement} style={{marginLeft: 20}}>
+     -
+      </button>
+      <h2 style={{padding: 10}}>{counter}</h2>
+      <button onClick={handleIncrement} style={{marginRight: 20}}>
+      +
+      </button>
       {terminar ? (
         <Link to="/Carrito">
           <button className="btn_activo">
@@ -45,9 +43,9 @@ const ItemCount = ({ stock, onClick }) => {
         </Link>
       ) : (
         <div className="button-container">
-        <Button  onClick={onAdd}>
+        <button  onClick={onAdd}>
           Agregar
-        </Button>
+        </button>
         </div>
       )}
     </div>

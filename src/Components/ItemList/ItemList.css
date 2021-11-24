@@ -8,4 +8,10 @@
   align-items: center;
   padding: 15px;
   
+  
+}
+button {
+  font-weight: bold;
+  padding: 4px;
+  
 }

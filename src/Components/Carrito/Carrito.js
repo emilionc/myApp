@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { ItemsContext } from "../../ItemContext";
 import { Link } from "react-router-dom";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../FireBase/FireBase";
 
-const Carrito = ({match}) => {
-  const { cantidadTotal, items, limpiarCarrito, removeItem } = useContext(ItemsContext);
-  //const [compraNula, setCompraNula] = useState
-  //const productLength = items.length
+import './Carrito.css';
+
+
+const Carrito = ({ match }) => {
+  const { cantidadTotal, items, limpiarCarrito, removeItem } =
+    useContext(ItemsContext);
+
   const [inputValue, setInputValue] = useState("");
   const [compras, setCompras] = useState(null);
-
 
   const registrarCompra = async (e) => {
     e.preventDefault();
@@ -19,26 +21,25 @@ const Carrito = ({match}) => {
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, "compras"), {
       name: inputValue,
+      id: items,
+      //  guardar el estado del carrito
     });
+    // asignar a compras el id del documento (docRef.id)
+    setCompras(docRef.id);
     console.log("Document written with ID: ", docRef.id);
     setInputValue("");
-    const requestDataCompras = async () => {
-      const product = await getDocs(collection(db, "compras"));
-      product.forEach((document) => {
-       // console.log(document.id);
-        setCompras(document.id);
-      });
-    };
-    requestDataCompras();
+
+    // No se cual es el sentido de esta parte
   };
   const onChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const sumaCompra = items.reduce((acc, item) => acc +(item.price * item.cantidad), 0);
+  const sumaCompra = items.reduce(
+    (acc, item) => acc + item.price * item.cantidad,
+    0
+  );
   console.log(sumaCompra);
-
-  
 
   return (
     <div>
@@ -65,7 +66,7 @@ const Carrito = ({match}) => {
             <div>
               {items.map((product) => {
                 return (
-                  <div>
+                  <div className="contenedor-item">
                     {console.log(product)}
                     <h2 style={{ marginTop: 30 }}>Nombre: {product.title}</h2>
                     <h2>talle: {product.talle}</h2>
@@ -74,7 +75,10 @@ const Carrito = ({match}) => {
                       {" "}
                       cantidad agregados: {product.cantidad}
                     </h3>
-                    <button onClick={() => removeItem(product.id)}>  Eliminar Producto</button>
+                    <button onClick={() => removeItem(product.id)}>
+                      {" "}
+                      Eliminar Producto
+                    </button>
                   </div>
                 );
               })}

@@ -1,17 +1,13 @@
-.Navegation {
-	display: flex;
-	min-height: 5vh;
-}
-
-ul {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  min-height: 5vh;
+  margin-top: 6px;
 }
 
 .Link {
-	color:black;
-	list-style-type: none;
-	font-size: 20px;
+  margin-right: 40px;
+  font-size: 20px;
+  color: aliceblue;
+  text-decoration: none;
 }

@@ -2,7 +2,6 @@ import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //components
 import NavBar from "./Components/NavBar/NavBar";
-import Navegation from "./Components/Navegation/Navegation";
 //views
 import Home from "./Views/Home/Home";
 import About from "./Views/About/About";
@@ -18,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
-        <Navegation />
+       
         
         <Switch>
 					<Route path='/' exact component={Home} />

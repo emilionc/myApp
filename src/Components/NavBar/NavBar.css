@@ -1,4 +1,6 @@
-Navbar {
-display: flex;
-justify-content: flex-start;
+.container-navbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  padding: 5px;
 }

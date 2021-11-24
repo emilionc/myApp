@@ -18,7 +18,7 @@ const UserDetail = ({ match }) => {
 
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
-        setProduct(docSnap.data())
+        setProduct({ id: itemID, ...docSnap.data()});
       }
     };
     requestData();
@@ -31,7 +31,6 @@ const UserDetail = ({ match }) => {
   return (
     <div>
       <div className="CharacterDetail" style={{ padding: 40 }}>
-        <h1> Detail</h1>
         {console.log(product)}
         <img src={product.img} alt="algodon"/>
         <h2>Nombre: {product.title}</h2>
