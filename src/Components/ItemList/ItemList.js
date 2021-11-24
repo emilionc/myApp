@@ -34,10 +34,10 @@ const ItemList = () => {
   const getSummer = () => {
     const requestData = async () => {
       const q = query(
-        collection(db, 'products'), // Aca estabas pasando el estado "products", habia que pasarle un string
+        collection(db, 'products'), 
         where("category", "==", "verano")
       );
-      const newProducts = []; // Para evitar el variable shadowing
+      const newProducts = []; 
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         console.log(doc.id, "=>", doc.data());
